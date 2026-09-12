@@ -6,6 +6,10 @@ resource "aws_instance" "TF-ec2" {
     key_name = aws_key_pair.TF-key-pair.key_name
     #security_groups = ["aws_security_group.TF-sg.name"]
     vpc_security_group_ids = [aws_security_group.TF-sg.id]
+
+    tags = {
+        name = "Terraform EC2 Instance"
+    }
 }
 
 # create was key pair using terraform
